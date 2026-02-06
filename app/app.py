@@ -1,4 +1,5 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
+
 
 app = Flask(__name__)
 
@@ -15,6 +16,11 @@ def api():
         "version": "1.0",
         "status": "API updated in rashmi_new branch"
     })
+
+
+@app.route("/todo")
+def todo():
+    return render_template("todo.html")
 
 
 
